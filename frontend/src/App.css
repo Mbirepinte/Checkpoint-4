@@ -136,12 +136,12 @@ table {
 :root {
   --white: #ffffff;
   --brown: #502419;
-  --darkGreen:#7EA172;
-  --lightGreen:#C7CB85;
-  --fawn:#E7A977;
-  --peach:#EBBE9B;
+  --darkGreen: #7ea172;
+  --lightGreen: #c7cb85;
+  --fawn: #e7a977;
+  --peach: #ebbe9b;
 
-/*   --bleu: #7bc5c6;
+  /*   --bleu: #7bc5c6;
   --purple-dark: #4e55ad;
   --purple-light: #93a9eb;
   --grey-light: #cecdcd;
@@ -157,13 +157,13 @@ table {
 body {
   margin: 0;
   padding: 0;
-/*   background-image: url("./assets/img/workit01-fond1.png"); */
-background-color: var(--lightGreen);
+  /*   background-image: url("./assets/img/workit01-fond1.png"); */
+  background-color: var(--lightGreen);
   background-size: cover;
   background-attachment: fixed;
 }
 
-.App {
+#App {
   width: 100vw;
   height: 100vh;
 }
@@ -183,10 +183,11 @@ h6 {
   font-size: 1.1rem;
 }
 
-.logo_workit {
+.logo_jdb {
   position: absolute;
   top: 0;
   left: 1vw;
-  width: 11vw;
+  width: 8vw;
   margin: 3vh 3vw;
+  border-radius: 2vh;
 }

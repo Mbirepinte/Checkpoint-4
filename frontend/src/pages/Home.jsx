@@ -1,11 +1,7 @@
+import React from "react";
 
-
-
-export default function Home() {
-  return (
-    <div>
-      Salut ça va 
-    </div>
-   
-  );
+function Home() {
+  return <div>Connexion</div>;
 }
+
+export default Home;

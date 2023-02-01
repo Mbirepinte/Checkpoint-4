@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20vh;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 2%;
+}
+
+.items {
+  opacity: 0.9;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 4px 4px hsla(235, 48%, 57%, 0.502);
+  padding: 14px 46px;
+  font-size: 2vh;
+  margin: 2vh;
+  width: auto;
+  background-color: var(--white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
