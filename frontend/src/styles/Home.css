@@ -82,9 +82,12 @@ h3 {
 .small_link {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
+}
+.small_link h4 {
+  margin: 0.2vw;
 }
 
 .connexion-form .small_link a {

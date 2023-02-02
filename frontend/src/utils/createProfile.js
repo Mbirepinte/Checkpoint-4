@@ -1,4 +1,4 @@
-const dataProfile = [
+const createProfile = [
   {
     id: 1,
     title: "Prénom",
@@ -15,14 +15,14 @@ const dataProfile = [
     placeholder: "Nom",
     className: "modal-subtitle",
   },
-  /*   {
+  {
     id: 3,
     title: "Email",
     type: "email",
     name: "email",
     placeholder: "Email",
     className: "modal-subtitle",
-  }, */
+  },
   {
     id: 4,
     title: "Adresse",
@@ -48,6 +48,31 @@ const dataProfile = [
     placeholder: "Profession",
     className: "modal-subtitle",
   },
+  {
+    id: 7,
+    title: "avatar url",
+    type: "email",
+    name: "avatar",
+    placeholder: "avatar url",
+    className: "modal-subtitle",
+  },
+
+  {
+    id: 8,
+    title: "Mot de passe",
+    type: "password",
+    name: "password",
+    placeholder: "Mot de passe",
+    className: "modal-subtitle",
+  },
+
+  {
+    id: 9,
+    title: "Confirmation",
+    type: "password",
+    placeholder: "Confirmation",
+    className: "modal-subtitle",
+  },
 ];
 
-export default dataProfile;
+export default createProfile;

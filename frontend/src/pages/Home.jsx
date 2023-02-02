@@ -83,13 +83,19 @@ function Home() {
           </div>
           <div className="small_link">
             <h4>
-              <Link to="/ForgottenPassword">Mot de passe oublié ?</Link>
+              <Link
+                to={{
+                  pathname:
+                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley",
+                }}
+              >
+                Mot de passe oublié ?
+              </Link>
             </h4>
-            {/*       {user === "user" && (
+
             <h4>
-            <Link to="/CreateProfile">Créer un profil ici </Link>
+              <Link to="/CreateProfile">Créer un profil ici </Link>
             </h4>
-          )} */}
           </div>
         </form>
       </motion.div>

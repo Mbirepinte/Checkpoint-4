@@ -18,3 +18,7 @@ export const GetMyProfile = (id) => {
 export const UpdateMyProfile = (id, payload) => {
   return axios.put(apiUrl + "user/" + id, payload);
 };
+
+export const PostProfile = (payload) => {
+  return axios.post(apiUrl + "user/createprofile", payload);
+};

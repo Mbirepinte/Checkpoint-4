@@ -1,5 +1,6 @@
 import Navbar from "@components/Navbar";
 import React, { useState, useContext, useEffect } from "react";
+import { motion } from "framer-motion";
 import { GetMyProfile, UpdateMyProfile } from "../api/userApi";
 import { authContext } from "../context/AuthContext";
 import dataProfile from "../utils/dataProfile";
@@ -50,39 +51,47 @@ function Profil() {
 
   return (
     <div className="profile">
-      <Navbar />
-      <div className="profile-nice">
-        <div className="profile-body">
-          {disabled ? (
-            <button className="profile-button" type="submit" onClick={modify}>
-              Modifier le profil
-            </button>
-          ) : (
-            <button
-              className="profile-button"
-              type="submit"
-              onClick={updateProfile}
-            >
-              Conserver les modifications
-            </button>
-          )}
-          {dataProfile.map((input) => (
-            <div>
-              <h2 className="profile-h2">{input.title}</h2>
-              <input
-                type={input.type}
-                name={input.name}
-                placeholder={input.placeholder}
-                className="profil-input"
-                value={profile[input.name]}
-                onChange={handleChange}
-                disabled={disabled}
-              />
-            </div>
-          ))}
+      <motion.div
+        className="page_createprofile"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -100, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Navbar />
+        <div className="profile-nice">
+          <div className="profile-body">
+            {disabled ? (
+              <button className="profile-button" type="submit" onClick={modify}>
+                Modifier le profil
+              </button>
+            ) : (
+              <button
+                className="profile-button"
+                type="submit"
+                onClick={updateProfile}
+              >
+                Conserver les modifications
+              </button>
+            )}
+            {dataProfile.map((input) => (
+              <div>
+                <h2 className="profile-h2">{input.title}</h2>
+                <input
+                  type={input.type}
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  className="profil-input"
+                  value={profile[input.name]}
+                  onChange={handleChange}
+                  disabled={disabled}
+                />
+              </div>
+            ))}
+          </div>
+          <img src={profile.avatar} alt="alt" style={{ width: "30%" }} />
         </div>
-        <img src={profile.avatar} alt="alt" style={{ width: "30%" }} />
-      </div>
+      </motion.div>
     </div>
   );
 }

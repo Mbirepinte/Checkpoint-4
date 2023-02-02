@@ -27,5 +27,11 @@ const update = (user, id) => {
     .query("UPDATE user SET ? WHERE userId = ?", [user, id])
     .then(([res]) => res);
 };
+const createOne = (payload) => {
+  return db
+    .promise()
+    .query("INSERT INTO user SET ?", [payload])
+    .then((user) => user);
+};
 
-module.exports = { findAll, findOne, findByEmail, update };
+module.exports = { findAll, findOne, findByEmail, update, createOne };

@@ -2,11 +2,20 @@
   display: flex;
 }
 
+.profile-create  {
+  display: flex;
+  margin-top: 6vw;
+}
+
 .profile-button {
   margin-left: 20vw;
 }
 
 .profile-nice {
+  display: flex;
+}
+.profile-nice-create {
+  margin-top: 5vw;
   display: flex;
 }
 

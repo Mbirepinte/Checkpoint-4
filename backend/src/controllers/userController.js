@@ -1,4 +1,5 @@
 const argon2 = require("argon2");
+const { validationResult } = require("express-validator");
 const userModel = require("../models/userModel");
 const { jwtSign } = require("../helpers/jwt");
 
@@ -61,6 +62,41 @@ const userController = {
       .update(user, id)
       .then(() => res.status(200).send({ message: "user updated" }))
       .catch((err) => next(err));
+  },
+
+  createUser: async (req, res, next) => {
+    const errors = validationResult(req);
+    const { firstname, lastname, adress, birthday, job, email, password } =
+      req.body;
+    const hashedPassword = await argon2.hash(password);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+      userModel
+        .createOne({
+          firstname,
+          lastname,
+          adress,
+          birthday,
+          job,
+          email,
+          password: hashedPassword,
+        })
+        .then(([response]) => {
+          console.warn(response);
+          return res.status(201).send({
+            message: "User created successfully",
+            email,
+            firstname,
+            lastname,
+          });
+        });
+    } catch (err) {
+      return next(err);
+    }
+    return res.status(201).send({ message: "User created successfully" });
   },
 };
 

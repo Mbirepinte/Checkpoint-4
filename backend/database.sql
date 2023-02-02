@@ -7,8 +7,8 @@ CREATE TABLE `user` (
     `birthday` VARCHAR(200)   NULL ,
     `job` VARCHAR(200)   NULL ,
     `password` VARCHAR(200)  NOT NULL ,
-    `avatar` VARCHAR(200)  NOT NULL ,
-    `role` int  NOT NULL ,
+    `avatar` VARCHAR(200)  NULL ,
+    `role` int  NOT NULL DEFAULT 1 ,
     PRIMARY KEY (
         `userId`
     )
