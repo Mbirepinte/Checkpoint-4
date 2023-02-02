@@ -39,8 +39,8 @@ function Events() {
     setNewEventDescription("");
   };
 
-  const tileContent = ({ /* date, */ blabla }) => {
-    const eventsOnDate = events[/* date. */ blabla.toString()] || [];
+  const tileContent = ({ date }) => {
+    const eventsOnDate = events[date.toString()] || [];
     return (
       <ul>
         {eventsOnDate.map((event) => (
