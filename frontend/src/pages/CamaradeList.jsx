@@ -8,9 +8,10 @@ import "../styles/CamaradeList.css";
 function CamaradeList() {
   const [friends, setFriends] = useState([]);
   const { auth } = useContext(authContext);
+  const [reload, setReload] = useState(true);
 
-  const loadFriends = () => {
-    GetAllMyFriends(auth.data.userId)
+  const loadFriends = async () => {
+    await GetAllMyFriends(auth.data.userId)
       .then((res) => {
         setFriends(res.data);
       })
@@ -19,7 +20,7 @@ function CamaradeList() {
 
   useEffect(() => {
     loadFriends();
-  }, []);
+  }, [reload]);
 
   return (
     <div>
@@ -30,7 +31,10 @@ function CamaradeList() {
             <Friend
               name={friend.firstname}
               url={friend.avatar}
-              email={friend.email}
+              id={friend.userId}
+              setReload={setReload}
+              reload={reload}
+              friendId={friend.friendsId}
             />
           </div>
         ))}

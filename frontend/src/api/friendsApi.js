@@ -6,3 +6,7 @@ const apiUrl = import.meta.env.VITE_BACKEND_URL;
 export const GetAllMyFriends = (id) => {
   return axios.get(apiUrl + "friends/myfriends/" + id);
 };
+
+export const DeleteFriend = (friendId) => {
+  return axios.delete(apiUrl + "friends/" + friendId);
+};

@@ -17,10 +17,16 @@ const findAllMyFriends = (id) => {
   return db
     .promise()
     .query(
-      "SELECT userId, email, firstname, avatar  FROM friends JOIN user ON user.userId = friends.user_Id where owner_id = ?",
+      "SELECT friendsId, userId, email, firstname, avatar  FROM friends JOIN user ON user.userId = friends.user_Id where owner_id = ?",
       [id]
     )
     .then(([friends]) => friends);
 };
+const deleteFriend = (friendsId) => {
+  return db
+    .promise()
+    .query("DELETE FROM friends where friendsId = ?", [friendsId])
+    .then(([friends]) => friends);
+};
 
-module.exports = { findAll, findOne, findAllMyFriends };
+module.exports = { findAll, findOne, findAllMyFriends, deleteFriend };

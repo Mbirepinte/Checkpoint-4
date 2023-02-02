@@ -7,3 +7,7 @@ export const Login = (payload) => {
   console.log(payload);
   return axios.post(apiUrl + "user/login", payload);
 };
+
+export const GetFriendById = (id) => {
+  return axios.get(apiUrl + "user/" + id);
+};

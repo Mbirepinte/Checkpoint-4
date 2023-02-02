@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Profil from "@pages/Profil";
 import Home from "./pages/Home";
 import CamaradeList from "./pages/CamaradeList";
 import UserList from "./pages/UserList";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/CamaradeList" element={<CamaradeList />} />
           <Route path="/utilisateurs" element={<UserList />} />
           <Route path="/agenda" element={<Agenda />} />
+          <Route path="/profil" element={<Profil />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </AnimatePresence>

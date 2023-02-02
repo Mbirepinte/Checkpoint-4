@@ -21,6 +21,13 @@ const friendsController = {
       .then((friends) => res.status(200).send(friends))
       .catch((err) => next(err));
   },
+  deleteFriend: (req, res, next) => {
+    const { friendsId } = req.params;
+    friendsModel
+      .deleteFriend(friendsId)
+      .then((friends) => res.status(200).send(friends))
+      .catch((err) => next(err));
+  },
 };
 
 module.exports = friendsController;

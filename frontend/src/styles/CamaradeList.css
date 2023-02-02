@@ -19,3 +19,9 @@
   width: 35%;
   padding: 0.5vw;
 }
+
+.button-delete {
+  margin: 0.5vw;
+  color: var(--brown);
+  cursor: pointer;
+}

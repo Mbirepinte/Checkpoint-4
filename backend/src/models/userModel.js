@@ -10,7 +10,7 @@ const findAll = () => {
 const findOne = (id) => {
   return db
     .promise()
-    .query("SELECT * FROM user where id = ?", [id])
+    .query("SELECT * FROM user where userId = ?", [id])
     .then(([user]) => user);
 };
 

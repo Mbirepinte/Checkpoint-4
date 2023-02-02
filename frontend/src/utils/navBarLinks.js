@@ -1,7 +1,7 @@
 export const navBarUser = [
   { id: 1, name: "Mon journal", link: "/Agenda" },
   { id: 2, name: "Mes camarades", link: "/CamaradeList" },
-
+  { id: 3, name: "Mon profil", link: "/profil" },
   { id: 4, name: "Deconnexion", link: "/" },
 ];
 
