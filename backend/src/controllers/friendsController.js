@@ -14,6 +14,13 @@ const friendsController = {
       .then(([friends]) => res.status(200).send(friends))
       .catch((err) => next(err));
   },
+  getAllMyFriends: (req, res, next) => {
+    const { id } = req.params;
+    friendsModel
+      .findAllMyFriends(id)
+      .then((friends) => res.status(200).send(friends))
+      .catch((err) => next(err));
+  },
 };
 
 module.exports = friendsController;

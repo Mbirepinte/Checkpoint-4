@@ -1,4 +1,4 @@
-/* const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 function jwtSign(payload, options = {}) {
   return jwt.sign(payload, process.env.JWT_AUTH_SECRET, options);
@@ -9,4 +9,3 @@ function jwtVerify(token) {
 }
 
 module.exports = { jwtSign, jwtVerify };
- */

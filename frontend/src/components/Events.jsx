@@ -1,6 +1,6 @@
-/* import React, { useState } from "react";
-import Calendar from "react-calendar";
- */
+import React from "react";
+/* import Calendar from "react-calendar"; */
+
 function Events() {
   /*   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState({});
@@ -53,8 +53,8 @@ function Events() {
           value={newEventDescription}
           onChange={(e) => setNewEventDescription(e.target.value)}
         />
-        <button onClick={addEvent}>Add Event</button>
-      </div> */}
+        <button onClick={addEvent}>Add Event</button> */}
+      {/*  </div> */}
     </div>
   );
 }

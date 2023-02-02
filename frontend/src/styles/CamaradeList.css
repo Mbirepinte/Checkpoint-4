@@ -1,0 +1,21 @@
+.friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friend-list {
+  margin-top: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friend-h2 {
+  margin-top: 5vw;
+  margin-bottom: 1vw;
+}
+
+.friend-img {
+  width: 35%;
+  padding: 0.5vw;
+}

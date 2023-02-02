@@ -1,21 +1,50 @@
-/* import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { navBarUser, navBarAdmin } from "../utils/navBarLinks"; */
+import { navBarUser, navBarAdmin, navBarSignIn } from "../utils/navBarLinks";
+import { authContext } from "../context/AuthContext";
+
 import "../styles/Navbar.css";
 
 function Navbar() {
-  /*   const [navbar, setNavbar] = useState(navBarUser);
-  console.log(navbar);
- */
+  const [navbar, setNavbar] = useState([]);
+
+  const { auth, logout } = useContext(authContext);
+
+  const handleLogout = (id) => {
+    if (id === 4) {
+      logout();
+    }
+  };
+
+  useEffect(() => {
+    if (auth.data) {
+      switch (auth.data.role) {
+        case 2:
+          return setNavbar(navBarAdmin);
+        case 1:
+          return setNavbar(navBarUser);
+        default:
+          return setNavbar(navBarSignIn);
+      }
+    } else {
+      return setNavbar(navBarSignIn);
+    }
+  }, [auth]);
+
   return (
     <div className="navbar">
-      {/*       <ul>
+      <ul>
         {navbar.map((item) => (
-          <NavLink to={item.link} key={item.id} className="items">
+          <NavLink
+            to={item.link}
+            key={item.id}
+            className="items"
+            onClick={() => handleLogout(item.id)}
+          >
             <li>{item.name}</li>
           </NavLink>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 }

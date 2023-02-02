@@ -6,5 +6,6 @@ const friendsController = require("../controllers/friendsController");
 
 friendsRouter.get("/", friendsController.getAllfriendss);
 friendsRouter.get("/:id", friendsController.getfriendsById);
+friendsRouter.get("/myfriends/:id", friendsController.getAllMyFriends);
 
 module.exports = friendsRouter;

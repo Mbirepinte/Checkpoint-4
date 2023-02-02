@@ -14,4 +14,11 @@ const findOne = (id) => {
     .then(([user]) => user);
 };
 
-module.exports = { findAll, findOne };
+const findByEmail = (email) => {
+  return db
+    .promise()
+    .query("SELECT * FROM user where email = ?", [email])
+    .then(([user]) => user);
+};
+
+module.exports = { findAll, findOne, findByEmail };

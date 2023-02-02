@@ -2,8 +2,9 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const router = require("./router");
-/* const errorMiddleware = require("./middlewares/errorMiddleware"); */
+const errorMiddleware = require("./middlewares/errorMiddleware");
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
-
+app.use(cookieParser());
 app.use(express.json());
 
 // Serve the public folder for public resources
@@ -27,7 +28,7 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 app.use("/api", router);
 
 // Error handling
-/* app.use(errorMiddleware); */
+app.use(errorMiddleware);
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(

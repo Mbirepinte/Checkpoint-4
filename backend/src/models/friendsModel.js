@@ -13,5 +13,14 @@ const findOne = (id) => {
     .query("SELECT * FROM friends where id = ?", [id])
     .then(([friends]) => friends);
 };
+const findAllMyFriends = (id) => {
+  return db
+    .promise()
+    .query(
+      "SELECT userId, email, firstname, avatar  FROM friends JOIN user ON user.userId = friends.user_Id where owner_id = ?",
+      [id]
+    )
+    .then(([friends]) => friends);
+};
 
-module.exports = { findAll, findOne };
+module.exports = { findAll, findOne, findAllMyFriends };
