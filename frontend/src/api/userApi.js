@@ -11,3 +11,10 @@ export const Login = (payload) => {
 export const GetFriendById = (id) => {
   return axios.get(apiUrl + "user/" + id);
 };
+
+export const GetMyProfile = (id) => {
+  return axios.get(apiUrl + "user/" + id);
+};
+export const UpdateMyProfile = (id, payload) => {
+  return axios.put(apiUrl + "user/" + id, payload);
+};

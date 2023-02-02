@@ -2,6 +2,10 @@ CREATE TABLE `user` (
     `userId` int AUTO_INCREMENT NOT NULL ,
     `email` VARCHAR(50)  NOT NULL ,
     `firstname` VARCHAR(50)  NOT NULL ,
+    `lastname` VARCHAR(50)  NULL ,
+    `adress` VARCHAR(200)   NULL ,
+    `birthday` VARCHAR(200)   NULL ,
+    `job` VARCHAR(200)   NULL ,
     `password` VARCHAR(200)  NOT NULL ,
     `avatar` VARCHAR(200)  NOT NULL ,
     `role` int  NOT NULL ,
@@ -69,14 +73,13 @@ INSERT INTO jdb.`role` (detailRole) VALUES
 	 ('user'),
 	 ('admin');
 
-INSERT INTO jdb.`user` (email,firstname,password,avatar,`role`) VALUES
-	 ('mickael.birepinte@gmail.com','MichaB','$argon2id$v=19$m=65536,t=3,p=4$yYVpZ3U+F/ee1AZlNTaZYQ$Zua2dOcNVSU5He6hV8h5z9uRwyXRQrq6gc0lSA6IjQU','https://cdn-icons-png.flaticon.com/512/2202/2202112.png',1),
-	 ('amandineL@gmail.com','AmandineL','$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561529.png',1),
-	 ('lucJaubert@gmail.com','lucJ','$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561544.png',1),
-	 ('paulBattault@gmail.com','PaulB','$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561556.png',1),
-	 ('olgayasno@gmail.com','OlgaYas','$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561523.png',1),
-	 ('joseadmin@gmail.com','joseadmin','$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561520.png',2);
-
+INSERT INTO jdb.`user` (email,firstname,lastname,adress,birthday,job,password,avatar,`role`) VALUES
+	 ('mickael.birepinte@gmail.com','MichaB','Birepinte','Pimpon La Fougère','01/01/1984','Maybe Dev Web','$argon2id$v=19$m=65536,t=3,p=4$yYVpZ3U+F/ee1AZlNTaZYQ$Zua2dOcNVSU5He6hV8h5z9uRwyXRQrq6gc0lSA6IjQU','https://cdn-icons-png.flaticon.com/512/2202/2202112.png',1),
+	 ('amandineL@gmail.com','AmandineL',NULL,NULL,NULL,NULL,'$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561529.png',1),
+	 ('lucJaubert@gmail.com','lucJ',NULL,NULL,NULL,NULL,'$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561544.png',1),
+	 ('paulBattault@gmail.com','PaulB',NULL,NULL,NULL,NULL,'$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561556.png',1),
+	 ('olgayasno@gmail.com','OlgaYas',NULL,NULL,NULL,NULL,'$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561523.png',1),
+	 ('joseadmin@gmail.com','joseadmin',NULL,NULL,NULL,NULL,'$argon2id$v=19$m=65536,t=3,p=4$wLubu1w/HZ/IoOXLX/Dg+Q$Y6u3DEhcUo/Scr/b33V/5lgqc4VpeYbTr9rXx22EAGM','https://cdn-icons-png.flaticon.com/512/9561/9561520.png',2);
 INSERT INTO jdb.friends (owner_ID,user_id) VALUES
 	 (1,2),
 	 (1,3),

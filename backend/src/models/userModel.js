@@ -21,4 +21,11 @@ const findByEmail = (email) => {
     .then(([user]) => user);
 };
 
-module.exports = { findAll, findOne, findByEmail };
+const update = (user, id) => {
+  return db
+    .promise()
+    .query("UPDATE user SET ? WHERE userId = ?", [user, id])
+    .then(([res]) => res);
+};
+
+module.exports = { findAll, findOne, findByEmail, update };

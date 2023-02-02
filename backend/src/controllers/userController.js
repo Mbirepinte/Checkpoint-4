@@ -54,6 +54,14 @@ const userController = {
       })
       .catch((err) => next(err));
   },
+  updateUser: (req, res, next) => {
+    const { id } = req.params;
+    const user = req.body;
+    userModel
+      .update(user, id)
+      .then(() => res.status(200).send({ message: "user updated" }))
+      .catch((err) => next(err));
+  },
 };
 
 module.exports = userController;
