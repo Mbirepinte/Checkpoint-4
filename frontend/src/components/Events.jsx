@@ -1,16 +1,30 @@
-import React from "react";
-/* import Calendar from "react-calendar"; */
+import React, { useState, useEffect, useContext } from "react";
+import Calendar from "react-calendar";
+import { authContext } from "../context/AuthContext";
+import { GetEventsById } from "../api/eventsApi";
+import "../styles/React-calendar.css";
 
 function Events() {
-  /*   const [date, setDate] = useState(new Date());
+  const { auth } = useContext(authContext);
+  const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState({});
   const [newEventTitle, setNewEventTitle] = useState("");
   const [newEventDescription, setNewEventDescription] = useState("");
 
+  const loadEvents = async () => {
+    await GetEventsById(auth.data.userId).then((res) => {
+      console.warn(res.data, "res.data");
+    });
+  };
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
   const onChange = (selectedDate) => {
     setDate(selectedDate);
   };
-
+  /*   console.log(events, "events"); */
   const addEvent = () => {
     const newEvent = {
       title: newEventTitle,
@@ -25,36 +39,32 @@ function Events() {
     setNewEventDescription("");
   };
 
-  const tileContent = ({ date, view }) => {
-    const eventsOnDate = events[date.toString()] || [];
+  const tileContent = ({ /* date, */ blabla }) => {
+    const eventsOnDate = events[/* date. */ blabla.toString()] || [];
     return (
       <ul>
-        {eventsOnDate.map((event, index) => (
-          <li key={index}>{event.title}</li>
+        {eventsOnDate.map((event) => (
+          <li>{event.title}</li>
         ))}
       </ul>
     );
-  }; */
+  };
 
   return (
-    <div>
-      {/*       <Calendar onChange={onChange} value={date} tileContent={tileContent} />
+    <div className="calendar">
+      <Calendar onChange={onChange} value={date} tileContent={tileContent} />
       <div>
-        <h2>Add Event</h2>
+        <h2>Rajouter un évènement </h2>
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Aujourd'hui nia nia nia"
           value={newEventTitle}
           onChange={(e) => setNewEventTitle(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Description"
-          value={newEventDescription}
-          onChange={(e) => setNewEventDescription(e.target.value)}
-        />
-        <button onClick={addEvent}>Add Event</button> */}
-      {/*  </div> */}
+        <button type="submit" onClick={addEvent}>
+          Add Event
+        </button>
+      </div>
     </div>
   );
 }

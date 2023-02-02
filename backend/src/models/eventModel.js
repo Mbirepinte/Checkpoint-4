@@ -10,7 +10,7 @@ const findAll = () => {
 const findOne = (id) => {
   return db
     .promise()
-    .query("SELECT * FROM event where id = ?", [id])
+    .query("SELECT * FROM event where user_Id = ?", [id])
     .then(([event]) => event);
 };
 

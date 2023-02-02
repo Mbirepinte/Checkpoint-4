@@ -24,31 +24,29 @@ function CamaradeList() {
   }, [reload]);
 
   return (
-    <div>
-      <motion.div
-        className="page_createprofile"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: -100, opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Navbar />
-        <div className="friend-list">
-          {friends.map((friend) => (
-            <div>
-              <Friend
-                name={friend.firstname}
-                url={friend.avatar}
-                id={friend.userId}
-                setReload={setReload}
-                reload={reload}
-                friendId={friend.friendsId}
-              />
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
+    <motion.div
+      className="page_createprofile"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -100, opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar />
+      <div className="friend-list">
+        {friends.map((friend) => (
+          <div>
+            <Friend
+              name={friend.firstname}
+              url={friend.avatar}
+              id={friend.userId}
+              setReload={setReload}
+              reload={reload}
+              friendId={friend.friendsId}
+            />
+          </div>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 

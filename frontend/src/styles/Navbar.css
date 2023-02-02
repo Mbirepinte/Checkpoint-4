@@ -26,3 +26,15 @@
   display: flex;
   justify-content: center;
 }
+
+.items.active {
+  font-size: 1rem;
+  padding: 14px 46px;
+  margin: 0 20px 0 5px;
+  color: var(--purple-dark);
+  list-style-type: none;
+  background-color: var(--peach);
+  opacity: 0.9;
+  backdrop-filter: blur(20px);
+  border-radius: 60px;
+}
